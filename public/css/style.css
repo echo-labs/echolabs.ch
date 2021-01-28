@@ -136,6 +136,10 @@ a:active {
   margin-bottom: 40px;
 }
 
+#requests {
+  padding-top: 20px;
+}
+
 /*--
     custom heading
 --*/
@@ -146,7 +150,7 @@ a:active {
 .heading {
   text-align: center;
   color: #777777;
-  padding-bottom: 70px;
+  padding-bottom: 32px;
 }
 
 .heading h2 {
@@ -171,6 +175,10 @@ a:active {
   font-weight: 500;
   font-size: 32px;
   line-height: 45px;
+}
+
+.employee {
+  padding-top: 20px;
 }
 
 .btn {
@@ -361,16 +369,16 @@ a:active {
 
 /* navigation */
 #navbar {
-  height: 75;
-  padding: 0 32;
+  height: 75px;
+  padding: 0px 20px 0px 0px;
 }
 
 
 .navbar-brand {
   color: #444;
-  font-size: 25px;
   margin: 0;
   line-height: 1;
+  padding-left: 20px;
 }
 
 .nav-link {
@@ -379,7 +387,7 @@ a:active {
 }
 
 .nav-item {
-  margin: 8 !important;
+  padding: 0px 4px;
 }
 
 .navbar-light .navbar-nav .nav-link {
