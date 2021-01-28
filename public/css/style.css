@@ -1,6 +1,11 @@
 /*--
     Common Css
 --*/
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-size: 14px;
   font-weight: 300;
@@ -355,6 +360,12 @@ a:active {
 }
 
 /* navigation */
+#navbar {
+  height: 75;
+  padding: 0 32;
+}
+
+
 .navbar-brand {
   color: #444;
   font-size: 25px;
@@ -363,8 +374,12 @@ a:active {
 }
 
 .nav-link {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
+}
+
+.nav-item {
+  margin: 8 !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
