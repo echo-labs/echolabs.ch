@@ -1,4 +1,4 @@
-import { HStack, VStack } from './components/tools';
+import { HStack, VStack } from '../components/tools';
 import Image from "next/image";
 import Link from 'next/link';
 
@@ -36,7 +36,11 @@ export default function Page() {
       </h1>
       <p className="mb-4">
         Echo Labs was founded in 2019 to offer various development services and
-        products in software. It is fully owned and operated by <Link className='font-medium underline' href='https://www.nide.ch'>Nicolas Degen</Link>.
+        products in software. It is fully owned and operated by{" "}
+        <Link className="font-medium underline" href="https://www.nide.ch">
+          Nicolas Degen
+        </Link>
+        .
       </p>
 
       <h2 className="mb-8 text-2xl font-semibold tracking-tighter">Products</h2>
@@ -74,6 +78,13 @@ export default function Page() {
           body="Easily track your upcoming event locations on a map."
           image="/images/Itinerary.png"
           url="https://apps.apple.com/app/id1409525264"
+        />
+
+        <Item
+          title="Wichtle"
+          body="The simplest and best secret santa generator for anyone!"
+          image="/images/Wichtle.png"
+          url="/wichtle"
         />
       </div>
     </section>
