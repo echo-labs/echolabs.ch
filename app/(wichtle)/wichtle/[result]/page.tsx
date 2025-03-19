@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { Button } from '@headlessui/react';
-import React, { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import path from 'path';
-import { decodeJson } from '../utils';
+import { Button } from "@headlessui/react";
+import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import path from "path";
+import { decodeJson } from "../utils";
 
 export default function NamesListPage() {
   const [namesList, setNamesList] = useState<string[]>([]);
@@ -12,12 +12,21 @@ export default function NamesListPage() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const encoded = path.basename(pathname);
+    try {
+      const encoded = path.basename(pathname);
 
-    const pairings = decodeJson(encoded);
-    setNamesList(Object.keys(pairings));
-    setPairings(pairings);
+      const pairings = decodeJson(encoded);
+      setNamesList(Object.keys(pairings));
+      setPairings(pairings);
+    } catch (error) {
+      console.error("Failed to parse JSON:", error);
+      setError(
+        "An error occurred. Please check the link is correct and try again or ask for a new link."
+      );
+    }
   }, []);
+
+  const [error, setError] = useState<string | null>(null);
 
   function handleShowName(nameToDelete) {
     alert(`You have to gift to ${pairings[nameToDelete]}`);
@@ -36,6 +45,11 @@ export default function NamesListPage() {
       <div className="p-2 text-sm font-bold">Do not look at others!!</div>
       <div className="w-full flex-row items-center justify-center">
         <div className="max-w-md space-y-2 overflow-scroll">
+          {error && (
+            <div className="p-4 text-red-500 bg-red-100 rounded-xl">
+              {error}
+            </div>
+          )}
           {namesList.map((existingName) => (
             <div
               key={existingName}
